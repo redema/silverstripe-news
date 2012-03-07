@@ -1,0 +1,109 @@
+
+Page:
+	parent:
+		URLSegment: parent
+
+NewsHolder:
+	topholder:
+		URLSegment: news
+		Sort: 1
+	holder2008:
+		URLSegment: 2008
+		Parent: =>NewsHolder.topholder
+		Sort: 1
+	holder2008january:
+		URLSegment: january
+		Parent: =>NewsHolder.holder2008
+		Sort: 1
+	holder2008february:
+		URLSegment: february
+		Parent: =>NewsHolder.holder2008
+		Sort: 2
+	holder2009:
+		URLSegment: 2009
+		Parent: =>NewsHolder.topholder
+		Sort: 2
+	holder2010:
+		URLSegment: 2010
+		Parent: =>NewsHolder.topholder
+		Sort: 3
+	holder2011:
+		URLSegment: 2011
+		Parent: =>NewsHolder.topholder
+		Sort: 4
+	holderXYZQ:
+		URLSegment: xyzq
+		Parent: =>Page.parent
+
+NewsPage:
+	nestednews1:
+		URLSegment: nestednews1
+		Parent: =>NewsHolder.holder2008january
+		Datetime: 2008-01-01
+		Weight: Teaser
+	nestednews2:
+		URLSegment: nestednews2
+		Parent: =>NewsHolder.holder2008january
+		Datetime: 2008-01-02
+		Weight: Normal
+	nestednews3:
+		URLSegment: nestednews3
+		Parent: =>NewsHolder.holder2008february
+		Datetime: 2008-02-01
+		Weight: Normal
+	nestednews4:
+		URLSegment: nestednews4
+		Parent: =>NewsHolder.holder2008february
+		Datetime: 2008-02-02
+		Weight: Headline
+	news1:
+		URLSegment: news1
+		Parent: =>NewsHolder.holder2009
+		Datetime: 2009-01-01
+		Weight: Teaser
+	news2:
+		URLSegment: news2
+		Parent: =>NewsHolder.holder2009
+		Datetime: 2009-02-01
+		Weight: Normal
+	news3:
+		URLSegment: news3
+		Parent: =>NewsHolder.holder2009
+		Datetime: 2009-03-01
+		Weight: Teaser
+	news4:
+		URLSegment: news4
+		Parent: =>NewsHolder.holder2009
+		Datetime: 2009-04-01
+		Weight: Normal
+	news5:
+		URLSegment: news5
+		Parent: =>NewsHolder.holder2010
+		Datetime: 2010-01-01
+		Weight: Teaser
+	news6:
+		URLSegment: news6
+		Parent: =>NewsHolder.holder2010
+		Datetime: 2010-02-01
+		Weight: Normal
+	news7:
+		URLSegment: news7
+		Parent: =>NewsHolder.holder2010
+		Datetime: 2010-03-01
+		Weight: Teaser
+	news8:
+		URLSegment: news8
+		Parent: =>NewsHolder.holder2010
+		Datetime: 2010-04-01
+		Weight: Normal
+	news9:
+		URLSegment: news9
+		Parent: =>NewsHolder.holder2011
+		Datetime: 2011-01-01
+		Weight: Headline
+	news10:
+		URLSegment: news10
+		Parent: =>NewsHolder.holder2011
+		Datetime: 2011-02-01
+		Weight: Teaser
+

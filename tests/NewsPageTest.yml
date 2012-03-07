@@ -1,0 +1,25 @@
+
+NewsPage:
+	news1:
+		URLSegment: news1
+		Title: Test title 1
+		Content: <p>Test content 1</p>
+		Datetime: 2011-01-01 00:00:00
+		SummaryTitle: Test summary title 1
+		SummaryContent: <p>Test summary content 1</p>
+	news2:
+		URLSegment: news2
+		Title: NULL
+		Content: NULL
+		Datetime: 2011-01-02 00:00:00
+		SummaryTitle: Test summary title 2
+		SummaryContent: <p>Test summary content 2</p>
+	news3:
+		URLSegment: news3
+		Title: Redirect Title
+		Content: NULL
+		Datetime: 2011-01-03 00:00:00
+		SummaryTitle: Test summary title 3
+		SummaryContent: <p>Test summary content 3</p>
+		RedirectLink: http://www.google.se/
+
