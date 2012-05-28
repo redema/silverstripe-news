@@ -31,6 +31,12 @@
 
 class NewsWeightTeaser extends NewsWeight {
 	
+	public function NewsTeasers($start = 0, $length = 6, $filter = '') {
+		$filter = $filter? "AND {$filter}": $filter;
+		return $this->owner->NewsAggregate($start, $length,
+			"\"Weight\" = 'Teaser' {$filter}");
+	}
+	
 	/**
 	 * Get a number of news teasers. Teasers can either be "real"
 	 * teasers or old Headlines (if NewsWeightHeadline has been
@@ -38,10 +44,12 @@ class NewsWeightTeaser extends NewsWeight {
 	 * 
 	 * @return DataObjectSet
 	 */
-	public function NewsTeasers($start = 0, $length = 6) {
+	public function NewsTeasersAndOldHeadlines($start = 0, $length = 6,
+			$filter = '') {
 		$headline = $this->owner->hasMethod('NewsHeadline')?
 			$this->owner->NewsHeadline(): NULL;
-		$filter = $headline? "AND \"SiteTree\".\"ID\" != {$headline->ID}": '';
+		$filter = $filter? " AND {$filter}": $filter;
+		$filter .= $headline? " AND \"SiteTree\".\"ID\" != {$headline->ID}": '';
 		return $this->owner->NewsAggregate($start, $length,
 			"\"Weight\" IN ('Headline', 'Teaser') {$filter}");
 	}

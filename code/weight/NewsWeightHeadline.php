@@ -36,9 +36,14 @@ class NewsWeightHeadline extends NewsWeight {
 	 * 
 	 * @return null|NewsPage
 	 */
-	public function NewsHeadline() {
-		return $this->owner->NewsAggregate(0, 1,
-			"\"Weight\" = 'Headline'")->First();
+	public function NewsHeadline($filter = '') {
+		return $this->NewsHeadlines(0, 1, $filter)->First();
+	}
+	
+	public function NewsHeadlines($start = 0, $length = 6, $filter = '') {
+		$filter = $filter? "AND {$filter}": $filter;
+		return $this->owner->NewsAggregate($start, $length,
+			"\"Weight\" = 'Headline' {$filter}");
 	}
 	
 }

@@ -104,7 +104,23 @@ class NewsHolderTest extends FunctionalTest {
 		$this->assertInstanceOf('NewsPage', $headline);
 		$this->assertEquals('news9', $headline->URLSegment);
 		
+		$headlines = $holder->NewsHeadlines();
+		$this->checkNewsPageDataObjectSet($headlines, array(
+			'news9',
+			'nestednews4'
+		));
+		
 		$teasers = $holder->NewsTeasers();
+		$this->checkNewsPageDataObjectSet($teasers, array(
+			'news10',
+			'news7',
+			'news5',
+			'news3',
+			'news1',
+			'nestednews1'
+		));
+		
+		$teasers = $holder->NewsTeasersAndOldHeadlines();
 		$this->checkNewsPageDataObjectSet($teasers, array(
 			'news10',
 			'news7',
