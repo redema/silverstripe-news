@@ -1,7 +1,7 @@
 # SilverStripe news Module
 
 This module is the result of combining code and lessons learned from news
-functions for a couple of different of sites which we have built at Charden.
+functions for a couple of different of sites which we have built at Redema.
 
 It is supposed to be easy to integrate on new sites, easy to customize and
 should perform well with big news archives.
@@ -40,6 +40,6 @@ TODO.
  * Write `Usage Overview`.
  * Implement tags and categories?
  * Decide if `NewsWeight*` really makes sense.
- * Make it possible to have a `NewsHolder` which is a child of another
-   `NewsHolder` redirect requests to view it to the topmost `NewsHolder`.
+ * Make it possible to have a `NewsHolder`, which is a child of another
+   `NewsHolder`, redirect requests to view it to the topmost `NewsHolder`.
 
